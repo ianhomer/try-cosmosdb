@@ -5,8 +5,14 @@
 const { default: cosmosServer } = require("@zeit/cosmosdb-server");
 const { CosmosClient } = require("@azure/cosmos");
 const https = require("https");
+const fs = require('fs');
 
-cosmosServer().listen(3000, () => {
+const options = {
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')
+};
+
+cosmosServer(options).listen(3000, () => {
   console.log(`Cosmos DB server running at https://localhost:3000`);
 
   runClient().catch(console.error);
@@ -16,8 +22,6 @@ async function runClient() {
   const client = new CosmosClient({
     endpoint: `https://localhost:3000`,
     key: "pass",
-    // disable SSL verification
-    // since the server uses self-signed certificate
     agent: https.Agent({ rejectUnauthorized: false })
   });
 

@@ -1,3 +1,5 @@
 *.crt
+*.cert
+*.key
 *.pem
 node_modules
