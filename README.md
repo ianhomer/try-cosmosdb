@@ -1,15 +1,11 @@
-# try-cosmosdb
+# try Cosmos DB
 
-Try CosmosDB
+Start up a cosmosdb server
 
-```sh
-./start-cosmos.sh
-./setup-cosmos-cert.sh
-```
+    cd cosmosdb-server
+    npm start
 
-Visit emulator at <https://localhost:8085/_explorer/index.html> 
+In another shell
 
-## References
-
-- <https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21>
-- <https://github.com/Azure/azure-cosmos-db-emulator-docker>
+    cd azure-sdk-for-python
+    ./cosmosdb.py

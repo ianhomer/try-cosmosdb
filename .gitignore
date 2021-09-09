@@ -1,1 +1,3 @@
 *.crt
+*.pem
+node_modules
