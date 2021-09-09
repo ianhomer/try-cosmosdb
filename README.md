@@ -4,6 +4,7 @@ Start up a Cosmos DB server
 
     cd cosmosdb-server
     ./register-cert.sh
+    npm install
     npm start
 
 In another shell call the Cosmos DB SDK

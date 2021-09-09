@@ -8,8 +8,8 @@ const https = require("https");
 const fs = require('fs');
 
 const options = {
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert')
+  key: fs.readFileSync('certificates/server.key'),
+  cert: fs.readFileSync('certificates/server.cert')
 };
 
 cosmosServer(options).listen(3000, () => {

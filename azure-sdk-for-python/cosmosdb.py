@@ -11,7 +11,12 @@ urllib3.disable_warnings()
 
 url = "https://localhost:3000"
 key = "pass"
-client = CosmosClient(url, key)
+client = CosmosClient(
+    url,
+    key,
+    # ssl_config=SSLConfiguration(),
+    # connection_cert="../cosmosdb-server/certificates/server.key"
+)
 
 database_name = "test"
 container_name = "test"
